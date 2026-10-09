@@ -25,12 +25,16 @@ public class MatrixMulti {
         //logic to multiply two 2D arrays
         for(int i=0;i<rows;i++){
             for(int j=0;j<cols;j++){
-                sum[i][j]=arr1[i][j]*arr2[i][j];
+                sum[i][j]=0;
+                for(int k=0;k<cols;k++){
+                    sum[i][j]+=arr1[i][k]*arr2[k][j]; 
+                }
             }
         }
         //printing the product of two 2D arrays
-        System.out.println("Product of two 2D arrays is: ");
-        for(int i=0;i<rows;i++){
+        System.out.println("Product of two arrays: ");
+        for(int i=0;i<rows;i++){    
+            
             for(int j=0;j<cols;j++){
                 System.out.print(sum[i][j]+" ");
             }
